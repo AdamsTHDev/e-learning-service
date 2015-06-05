@@ -46,6 +46,11 @@ public class CourseServiceImpl implements CourseService {
 	}
 	
 	@Override
+	public Course findById(Long id) throws Exception {
+		return courseDao.find(id);
+	}
+	
+	@Override
 	public List<Course> findByHql(String hql, Object...vals) throws Exception {
 		return courseDao.findByHQL(hql, vals);
 	}

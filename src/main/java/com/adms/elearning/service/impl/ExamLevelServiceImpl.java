@@ -46,6 +46,11 @@ public class ExamLevelServiceImpl implements ExamLevelService {
 	}
 	
 	@Override
+	public ExamLevel findById(Long id) throws Exception {
+		return examLevelDao.find(id);
+	}
+	
+	@Override
 	public List<ExamLevel> findByHql(String hql, Object...vals) throws Exception {
 		return examLevelDao.findByHQL(hql, vals);
 	}

@@ -2,6 +2,7 @@ package com.adms.elearning.service.impl;
 
 import java.util.List;
 
+import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -53,6 +54,11 @@ public class QuestionServiceImpl implements QuestionService {
 	@Override
 	public List<Question> findByNamedQuery(String namedQuery, Object...vals) throws Exception {
 		return questionDao.findByNamedQuery(namedQuery, vals);
+	}
+	
+	@Override
+	public List<Question> findByCriteria(DetachedCriteria detachedCriteria) throws Exception {
+		return questionDao.findByCriteria(detachedCriteria);
 	}
 	
 }

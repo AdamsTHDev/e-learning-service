@@ -2,6 +2,7 @@ package com.adms.elearning.service.impl;
 
 import java.util.List;
 
+import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -55,4 +56,8 @@ public class CourseResultServiceImpl implements CourseResultService {
 		return courseResultDao.findByNamedQuery(namedQuery, vals);
 	}
 	
+	@Override
+	public List<CourseResult> findByCriteria(DetachedCriteria criteria) throws Exception {
+		return courseResultDao.findByCriteria(criteria);
+	}
 }

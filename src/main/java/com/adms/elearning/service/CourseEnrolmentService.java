@@ -2,6 +2,8 @@ package com.adms.elearning.service;
 
 import java.util.List;
 
+import org.hibernate.criterion.DetachedCriteria;
+
 import com.adms.elearning.entity.CourseEnrolment;
 
 public interface CourseEnrolmentService {
@@ -17,5 +19,7 @@ public interface CourseEnrolmentService {
 	public List<CourseEnrolment> findByHql(String hql, Object...vals) throws Exception;
 
 	public List<CourseEnrolment> findByNamedQuery(String namedQuery, Object...vals) throws Exception;
+
+	public List<CourseEnrolment> findByCriteria(DetachedCriteria criteria) throws Exception;
 
 }

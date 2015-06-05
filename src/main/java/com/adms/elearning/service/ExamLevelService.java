@@ -18,4 +18,6 @@ public interface ExamLevelService {
 
 	public List<ExamLevel> findByNamedQuery(String namedQuery, Object...vals) throws Exception;
 
+	public ExamLevel findById(Long id) throws Exception;
+
 }

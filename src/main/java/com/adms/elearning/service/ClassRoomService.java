@@ -18,4 +18,6 @@ public interface ClassRoomService {
 
 	public List<ClassRoom> findByNamedQuery(String namedQuery, Object...vals) throws Exception;
 
+	public ClassRoom save(ClassRoom example, String userLogin) throws Exception;
+
 }

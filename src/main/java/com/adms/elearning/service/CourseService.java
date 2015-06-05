@@ -18,4 +18,6 @@ public interface CourseService {
 
 	public List<Course> findByNamedQuery(String namedQuery, Object...vals) throws Exception;
 
+	public Course findById(Long id) throws Exception;
+
 }
