@@ -17,15 +17,15 @@ public class SectionServiceImpl implements SectionService {
 
 	@Autowired
 	private SectionDao sectionDao;
-	
+
 	public SectionServiceImpl() {
-		
+
 	}
 
 	public void setSectionDao(SectionDao sectionDao) {
 		this.sectionDao = sectionDao;
 	}
-	
+
 	@Override
 	public List<Section> findAll() throws Exception {
 		return sectionDao.findAll();
@@ -35,17 +35,22 @@ public class SectionServiceImpl implements SectionService {
 	public Section add(Section example, String userLogin) throws Exception {
 		return sectionDao.save(example);
 	}
-	
+
 	@Override
 	public Section update(Section example, String userLogin) throws Exception {
 		return sectionDao.save(example);
 	}
-	
+
 	@Override
 	public List<Section> find(Section example) throws Exception {
 		return sectionDao.find(example);
 	}
-	
+
+	@Override
+	public Section findById(Long id) throws Exception {
+		return sectionDao.find(id);
+	}
+
 	@Override
 	public List<Section> findByHql(String hql, Object...vals) throws Exception {
 		return sectionDao.findByHQL(hql, vals);
@@ -55,10 +60,10 @@ public class SectionServiceImpl implements SectionService {
 	public List<Section> findByNamedQuery(String namedQuery, Object...vals) throws Exception {
 		return sectionDao.findByNamedQuery(namedQuery, vals);
 	}
-	
+
 	@Override
 	public List<Section> findByCriteria(DetachedCriteria detachedCriteria) throws Exception {
 		return sectionDao.findByCriteria(detachedCriteria);
 	}
-	
+
 }

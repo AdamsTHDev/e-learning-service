@@ -22,4 +22,6 @@ public interface SectionService {
 
 	public List<Section> findByCriteria(DetachedCriteria detachedCriteria) throws Exception;
 
+	public Section findById(Long id) throws Exception;
+
 }
